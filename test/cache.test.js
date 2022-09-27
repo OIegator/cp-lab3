@@ -28,3 +28,12 @@ test('Cache return null after 3 calls', () => {
     expect(test_cache.get('John')).toBe(3);
     expect(test_cache.get('John')).toBeNull();
 });
+
+
+test('Cache returns correct history', () => {
+    let test_cache = new Cache();
+    test_cache.add('John', 3, 2);
+
+    expect(test_cache.get('John')).toBe(3);
+    expect(test_cache.getHistory()).toBe(`Key = John, Value = 3, Count = 2`);
+});

@@ -28,14 +28,10 @@ class Cache{
 
     getHistory(){
         let string = ''
-        for (let i = 0; i < history.length; i++)
-            string += history[i] + '\n'
+        for (let i = 0; i < this.history.length; i++)
+            string += this.history[i]
         return string
     }
 
-    getInfo(x){
-        let string = ''
-        return `Key = ${x}, Value = ${this.values.get(x)}, Count = ${this.amount.get(x)}`
-    }
 }
 export {Cache}
